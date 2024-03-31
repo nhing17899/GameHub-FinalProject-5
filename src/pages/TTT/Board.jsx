@@ -78,8 +78,3 @@ export default function Board({ xIsNext, squares, onPlay }) {
         </>
     )
 }
-Board.propTypes = {
-    xIsNext: PropTypes.boolean.isRequired,
-    squares: PropTypes.ReactNodeArray.isRequired,
-    onPlay: PropTypes.func.isRequired,
-}
