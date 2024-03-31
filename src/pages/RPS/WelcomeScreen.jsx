@@ -1,4 +1,4 @@
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 export const WelcomeScreen = ({ name, onNameChange, onGameStart }) => {
 
@@ -6,7 +6,7 @@ export const WelcomeScreen = ({ name, onNameChange, onGameStart }) => {
     console.log(name)
     onGameStart();
   }
-  
+
   return (
     <div id="welcome-screen">
       <form id="name-form">
@@ -25,10 +25,11 @@ export const WelcomeScreen = ({ name, onNameChange, onGameStart }) => {
             maxLength="15"
           />
         </div>
-        <button 
-          className="btn btn-primary" 
-          id="start-game-button" type="button" 
-          onClick={onStartGameClick}>
+        <button
+          className="btn btn-primary"
+          id="start-game-button" type="button"
+          onClick={onStartGameClick}
+        >
           Start Game!
         </button>
       </form>

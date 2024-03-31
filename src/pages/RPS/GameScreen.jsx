@@ -1,11 +1,10 @@
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 import { useState } from 'react';
-import { RockPaperScissors } from '../RPS';
+import { RockPaperScissors } from './RPS.js';
 
-const GameScreen = ({name}) => {
+export const GameScreen = ({name}) => {
   const [ game, setGame ] = useState(new RockPaperScissors(name));
   const [ selection, setSelection ] = useState(`rock`);
-  // const [ score, setScore ] = useState({user: 0, cpu: 0});
   const [ userScore, setUserScore ] = useState(0);
   const [ cpuScore, setCpuScore ] = useState(0);
   const [ history, setHistory ] = useState([]);    
@@ -81,5 +80,3 @@ const GameScreen = ({name}) => {
 GameScreen.propTypes = {
   name: PropTypes.string.isRequired,
 };
-
-export default GameScreen;
