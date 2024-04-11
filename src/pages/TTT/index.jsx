@@ -6,7 +6,7 @@ export default function Game() {
     const [history, setHistory] = useState([Array(9).fill(null)]);
     const [currentMove, setCurrentMove] = useState(0);
     const currentSquares = history[currentMove];
-
+    
     function handlePlay(nextSquares) {
         const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
         setHistory(nextHistory);
@@ -14,24 +14,11 @@ export default function Game() {
         setXIsNext(!xIsNext);
     }
 
-    function jumpTo(nextMove) {
-        setCurrentMove(nextMove);
-        setXIsNext(nextMove % 2 === 0);
+    function onResetGameButtonClick() {
+        setXIsNext(true);
+        setHistory([Array(9).fill(null)]);
+        setCurrentMove(0);
     }
-
-    const moves = history.map((squares, move) => {
-        let description;
-        if (move > 0) {
-            description = 'Move #' + move;
-        } else {
-            description = 'Game start';
-        }
-        return (
-            <li key={move}>
-                <button onClick={() => jumpTo(move)}>{description}</button>
-            </li>
-        );
-    });
 
     return (
         <>
@@ -40,12 +27,10 @@ export default function Game() {
                 <div className='game-board'>
                     <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
                 </div>
-                <div className='game-info'>
-                    <ol>
-                        {moves}
-                    </ol>
-                </div>
             </div>
+            <button id="reset-game-button" className="btn btn-secondary" onClick={onResetGameButtonClick} style={{ marginTop: "2rem" }}>
+                Reset
+            </button>
         </>
     )
 }
