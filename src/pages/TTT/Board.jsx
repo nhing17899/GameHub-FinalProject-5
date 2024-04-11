@@ -33,7 +33,14 @@ function calculateWinner(squares) {
             return squares[a];
         }
     }
+
+    if (isBoardFull(squares)) return "Tie";
+
     return null;
+}
+
+function isBoardFull(squares) {
+    return squares.every(square => square !== null);
 }
 
 export default function Board({ xIsNext, squares, onPlay }) {
@@ -49,7 +56,10 @@ export default function Board({ xIsNext, squares, onPlay }) {
 
     const winner = calculateWinner(squares);
     let status;
-    if (winner) {
+    if (winner === "Tie") {
+        status = "TIE !!!!";
+    }
+    else if (winner && winner !== "Tie") {
         status = "Winner: " + winner;
     }
     else {
