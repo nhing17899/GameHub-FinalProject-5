@@ -123,8 +123,23 @@ li {
   margin-left: 20px;
 }
 
-.letterBox {
-  width: 4px;
-  height: 4px;
-  border-bottom: 2px solid black;
+.hangmanLetter {
+  font-size: 40px;
+}
+
+.word {
+  padding: 50px;
+}
+
+.hangmanTitle {
+  margin-top: auto;
+  padding-bottom: 50px;
+}
+
+.hangman-container {
+  display: flex;
+}
+
+.toTheRight {
+  margin-left: 20px;
 }

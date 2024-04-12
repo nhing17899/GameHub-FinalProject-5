@@ -7,7 +7,7 @@ import RPSGame from './pages/RPS';
 import TTTGame from './pages/TTT';
 import ErrorPage from './pages/ErrorPage';
 import Navigation from './components/Navigation';
-import HangmanGame from './pages/Hangman/index';
+import HangmanGame from './pages/Hangman/Hangman';
 
 const router = createBrowserRouter([
   {
