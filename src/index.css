@@ -122,3 +122,9 @@ li {
   flex: 1;
   margin-left: 20px;
 }
+
+.letterBox {
+  width: 4px;
+  height: 4px;
+  border-bottom: 2px solid black;
+}
