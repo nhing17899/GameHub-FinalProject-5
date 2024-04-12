@@ -15,6 +15,9 @@ const Navigation = () => {
                         <li>
                             <Link to="/TTT">Tic Tac Toe</Link>
                         </li>
+                        <li>
+                            <Link to="/Wordle">Wordle</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
