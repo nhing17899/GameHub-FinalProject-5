@@ -2,12 +2,12 @@ import { PropTypes } from 'prop-types';
 import { useState } from 'react';
 import { RockPaperScissors } from './RPS.js';
 
-export const GameScreen = ({name}) => {
-  const [ game, setGame ] = useState(new RockPaperScissors(name));
-  const [ selection, setSelection ] = useState(`rock`);
-  const [ userScore, setUserScore ] = useState(0);
-  const [ cpuScore, setCpuScore ] = useState(0);
-  const [ history, setHistory ] = useState([]);    
+export const GameScreen = ({ name }) => {
+  const [game, setGame] = useState(new RockPaperScissors(name));
+  const [selection, setSelection] = useState(`rock`);
+  const [userScore, setUserScore] = useState(0);
+  const [cpuScore, setCpuScore] = useState(0);
+  const [history, setHistory] = useState([]);
 
   const updateScoreAndHistory = () => {
     // setScore({...game.score});
@@ -15,7 +15,7 @@ export const GameScreen = ({name}) => {
     setCpuScore(game.score.cpu)
     setHistory([...game.gameHistoryLog]);
   }
-  
+
   const onGoButtonClick = () => {
     game.play(selection);
     console.log(game.score);
@@ -34,19 +34,18 @@ export const GameScreen = ({name}) => {
   return (
     <div id="game-screen">
       <div id="score-tally">
-        <p id="score"> {name}: {userScore} v CPU: {cpuScore}</p>
-        <span>{selection}</span>
+        <p className="score"> {name}: <b>{userScore}</b> ---- CPU: <b>{cpuScore}</b></p>
       </div>
 
       <form id="game-form">
         <div className="form-group">
-          <label htmlFor="user-selection">Select your choice:</label>
-          <select 
-            className="custom-select" 
-            id="user-selection" 
-            name="user-selection" 
+          <p>Select your choice:</p>
+          <select
+            className="custom-select"
+            id="user-selection"
+            name="user-selection"
             value={selection}
-            onChange={(e) =>setSelection(e.target.value)}
+            onChange={(e) => setSelection(e.target.value)}
           >
             <option id="rock" value="rock">
               Rock
@@ -59,21 +58,24 @@ export const GameScreen = ({name}) => {
             </option>
           </select>
         </div>
-        <button className="btn btn-success" type="button" id="go-button" onClick={onGoButtonClick}>
-          Go!
-        </button>
+        <div className="form-group btn-group">
+          <button className="btn btn-success go-button" type="button" onClick={onGoButtonClick}>
+            Go!
+          </button>
+          <button className="btn btn-secondary reset-game-button" onClick={onResetGameButtonClick}>
+            Reset
+          </button>
+        </div>
       </form>
 
-      <div id="game-history">
+      <div className="game-history">
         <ul>
           {history.map((round, index) => (
             <li key={index}>{round}</li>
           ))}
         </ul>
       </div>
-      <button id="reset-game-button" className="btn btn-secondary" onClick={onResetGameButtonClick}>
-        Reset
-      </button>
+
     </div>
   );
 };

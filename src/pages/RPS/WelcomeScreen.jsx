@@ -3,17 +3,16 @@ import { PropTypes } from 'prop-types';
 export const WelcomeScreen = ({ name, onNameChange, onGameStart }) => {
 
   function onStartGameClick() {
-    console.log(name)
     onGameStart();
   }
 
   return (
     <div id="welcome-screen">
-      <form id="name-form">
+      <form className="name-form">
         <div className="form-group">
           <label htmlFor="username">Type your name: </label>
           <input
-            className="form-control"
+            className="form-control name-input"
             type="text"
             id="username"
             name="username"
@@ -26,8 +25,8 @@ export const WelcomeScreen = ({ name, onNameChange, onGameStart }) => {
           />
         </div>
         <button
-          className="btn btn-primary"
-          id="start-game-button" type="button"
+          className="btn btn-primary start-game-button"
+          type="submit"
           onClick={onStartGameClick}
         >
           Start Game!
