@@ -24,6 +24,7 @@ const Hangman = () => {
     const data = await response.json();
 
     setWord(data[0].toLowerCase());
+    console.log(data[0].toLowerCase());
   };
 
   const handleGuess = () => {
@@ -37,16 +38,20 @@ const Hangman = () => {
 
       if (!word.includes(letter) && incorrectGuesses.has(letter) === false) {
         incorrectGuesses.add(letter);
+        console.log(remainingAttempts);
         setRemainingAttempts(remainingAttempts - 1);
-      }
+        console.log(remainingAttempts);
 
-      if (remainingAttempts === 1) {
-        setGameState('lost');
-        
+        if (remainingAttempts === 1) {
+          setGameState('lost');
+        }
 
-      } else if (word.split('').every((char) => newGuessedLetters.has(char))) {
+      } 
+
+      if (word.split('').every((char) => newGuessedLetters.has(char))) {
         setGameState('won');
       }
+      
     }
     setInputLetter('');
   };
