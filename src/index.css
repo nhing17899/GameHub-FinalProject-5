@@ -122,3 +122,24 @@ li {
   flex: 1;
   margin-left: 20px;
 }
+
+.hangmanLetter {
+  font-size: 40px;
+}
+
+.word {
+  padding: 50px;
+}
+
+.hangmanTitle {
+  margin-top: auto;
+  padding-bottom: 50px;
+}
+
+.hangman-container {
+  display: flex;
+}
+
+.toTheRight {
+  margin-left: 20px;
+}
