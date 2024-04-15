@@ -132,15 +132,14 @@ export default function WordleGame() {
         <>
             <h1>Wordle Game</h1>
             {console.log(gameConfig.word)}
-            <div className={`statusWordle ${isWin && "statusWordleWin"}`}>{status}</div>
-
-            <div id="wordle" ref={wordleRef} tabIndex="0" onKeyDown={handleKeyDown}>
+            <h3 className={`statusWordle ${isWin && "statusWordleWin"}`}>{status}</h3>
+            <div className="wordle" ref={wordleRef} tabIndex="0" onKeyDown={handleKeyDown}>
                 {grid.map((guess, index) => {
                     return <Row
                         key={index}
-                        word={guess}
+                        word={guess.toUpperCase()}
                         markColor={currRow > index}
-                        correctWord={gameConfig.word} />
+                        correctWord={gameConfig.word.toUpperCase()} />
                 })}
             </div>
         </>

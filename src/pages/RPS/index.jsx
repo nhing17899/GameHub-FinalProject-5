@@ -3,7 +3,7 @@ import { WelcomeScreen } from './WelcomeScreen'
 import { GameScreen } from './GameScreen'
 
 const RPSGame = () => {
-    const [name, setName] = useState(``);
+    const [name, setName] = useState(`Bearcat`);
     const [gameStarted, setGameStarted] = useState(false);
 
     return (
