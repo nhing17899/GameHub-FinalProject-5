@@ -217,7 +217,13 @@ button:focus-visible {
   font-family: inherit;
 }
 
+
 .btn-group {
+
+ */
+
+.wordle {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,7 +234,31 @@ button:focus-visible {
   background-color: grey;
 }
 
+
 .reset-game-button {
   margin: 5px;
   background-color: grey;
+
+.letter.incorrect {
+  background-color: var(--incorrect);
+
+.hangmanLetter {
+  font-size: 40px;
+}
+
+.word {
+  padding: 50px;
+}
+
+.hangmanTitle {
+  margin-top: auto;
+  padding-bottom: 50px;
+}
+
+.hangman-container {
+  display: flex;
+}
+
+.toTheRight {
+  margin-left: 20px;
 }

@@ -18,6 +18,9 @@ const Navigation = () => {
                         <li>
                             <Link to="/Wordle">Wordle</Link>
                         </li>
+                        <li>
+                            <Link to="/Hangman">Wordle</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
