@@ -19,7 +19,7 @@ const Navigation = () => {
                             <Link to="/Wordle">Wordle</Link>
                         </li>
                         <li>
-                            <Link to="/Hangman">Wordle</Link>
+                            <Link to="/Hangman">Hangman</Link>
                         </li>
                     </ul>
                 </nav>
