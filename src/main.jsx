@@ -8,6 +8,7 @@ import TTTGame from './pages/TTT';
 import WordleGame from './pages/Wordle';
 import ErrorPage from './pages/ErrorPage';
 import Navigation from './components/Navigation';
+import HangmanGame from './pages/Hangman/Hangman';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/Wordle",
         element: <WordleGame />
+      },
+      {
+        path: "/Hangman",
+        element: <HangmanGame />
       },
     ],
   },
