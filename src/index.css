@@ -219,7 +219,7 @@ button:focus-visible {
 
 
 .btn-group {
-
+}
  */
 
 .wordle {
@@ -238,9 +238,11 @@ button:focus-visible {
 .reset-game-button {
   margin: 5px;
   background-color: grey;
+}
 
 .letter.incorrect {
   background-color: var(--incorrect);
+}
 
 .hangmanLetter {
   font-size: 40px;
