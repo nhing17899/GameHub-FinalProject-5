@@ -28,9 +28,6 @@ export default function WordleGame() {
     const [currCol, setCurrCol] = useState(0);
     const [isWin, setIsWin] = useState(false);
 
-    const [presentLetters, setPresentLetters] = useState([]);
-    const [absentLetters, setAbsentLetters] = useState([]);
-
     const [grid, setGrid] = useState(["     ", "     ", "     ", "     ", "     ", "     "]);
 
     useEffect(() => {
@@ -61,11 +58,13 @@ export default function WordleGame() {
         else if (currGuess === gameConfig.word) {
             setStatus('CORRECT');
             setIsWin(true);
+            setCurrRow(currRow + 1);
             return;
         }
         else if (currRow === gameConfig.rows - 1) {
             setStatus('Game Over');
             setIsWin(true);
+            setCurrRow(currRow + 1);
             return;
         }
 
@@ -73,16 +72,6 @@ export default function WordleGame() {
         [...currGuess].forEach((letter, index) => {
             if (gameConfig.word[index] === letter) correctLettersInCorrectArr.push(letter);
         });
-
-        setPresentLetters([
-            ...presentLetters,
-            ...[...currGuess].filter((letter) => gameConfig.word.includes(letter))
-        ]);
-
-        setAbsentLetters([
-            ...absentLetters,
-            ...[...currGuess].filter((letter) => !gameConfig.word.includes(letter))
-        ]);
 
         setStatus('Not correct yet!');
 
