@@ -16,7 +16,10 @@ const Navigation = () => {
                             <Link to="/TTT">Tic Tac Toe</Link>
                         </li>
                         <li>
-                            <Link to="/Hangman">Hangman</Link>
+                            <Link to="/Wordle">Wordle</Link>
+                        </li>
+                        <li>
+                            <Link to="/Hangman">Wordle</Link>
                         </li>
                     </ul>
                 </nav>

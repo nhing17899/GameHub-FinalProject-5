@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import HomePage from './pages/HomePage';
 import RPSGame from './pages/RPS';
 import TTTGame from './pages/TTT';
+import WordleGame from './pages/Wordle';
 import ErrorPage from './pages/ErrorPage';
 import Navigation from './components/Navigation';
 import HangmanGame from './pages/Hangman/Hangman';
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/TTT",
         element: <TTTGame />
+      },
+      {
+        path: "/Wordle",
+        element: <WordleGame />
       },
       {
         path: "/Hangman",
