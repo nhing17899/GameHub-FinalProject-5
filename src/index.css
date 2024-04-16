@@ -280,6 +280,13 @@ button:focus-visible {
 
 .card img {
   width: 100%;
-
   border-radius: 8px;
+}
+
+.card .front {
+  display: block;
+}
+
+.card .cover {
+  display: none;
 }

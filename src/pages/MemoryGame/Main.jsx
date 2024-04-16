@@ -19,11 +19,11 @@ const images = [
 
 const Main = () => {
 
+  // Setting the state for the cards, turns, and choices
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
-  const [matched, setMatched] = useState([]);
 
 
 
@@ -37,6 +37,8 @@ const Main = () => {
   };
 
 
+
+
 // recgonizing the selected card
 const selectedChoice = (card) => {
 
@@ -47,10 +49,10 @@ const selectedChoice = (card) => {
     }
     else if (choiceTwo === null) {
       setChoiceTwo(card);
-      setTurns(turns + 1);
       //console.log('choice One = ' + choiceOne, 'choice two = ' + choiceTwo);
       
-    } else {
+    } 
+    else {
       return;
 }
 }
@@ -61,19 +63,19 @@ const selectedChoice = (card) => {
 useEffect(() => {
   
   if (choiceOne && choiceTwo) {
+    // setting matched to matched cards array and matched value 
     if (choiceOne.src === choiceTwo.src) {
-        console.log("Match" + matched);
-        setCards(cards.map(card => {
-          if (card.src === choiceOne.src) {
-            return {...card, matched: true}
+        setCards(MatchedCards =>{
+          return MatchedCards.map(card => { 
+            if (card.src === choiceOne.src) {
+              return {...card, matched: true}}
+            else {
+              return card;
           }
-          return card;
-        }));
-        
-        setMatched(true);
+        })
+      })
 
-
-        resetChoices();
+      resetChoices();
       }
     else if (choiceOne.src !== choiceTwo.src){
         console.log("No Match"); 
@@ -82,8 +84,13 @@ useEffect(() => {
     else {
       return;
     }
-}
+  }
 } , [choiceOne, choiceTwo]);
+
+
+
+
+
 
 // Resetting the selected cards
 const resetChoices = () => {
@@ -106,7 +113,10 @@ return (
         images={images} 
         key={card.id} 
         card={card} 
-        selectedChoice={selectedChoice}/>)}
+        selectedChoice={selectedChoice}
+        flipped={card === choiceOne || card === choiceTwo || card.matched}
+      />
+
 
       </div>
       <p>Attempts: {turns}</p>
@@ -114,5 +124,6 @@ return (
   );
 
 }
+
 
 export default Main;
