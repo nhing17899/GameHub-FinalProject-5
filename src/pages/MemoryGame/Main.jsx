@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import MemoryGame from "./MemoryGame";
+import { useEffect } from "react";
 
 //Card Images 
 const images = [
@@ -13,7 +13,7 @@ const images = [
 ];
 
 
-const Cover = '...images/Cards/Cover.png'; 
+//const Cover = '...images/Cards/Cover.png'; 
 
 
 
@@ -25,25 +25,38 @@ const Main = () => {
   const [turns, setTurns] = useState(0);
 
   // Shuffling cards using sort method and assigning a random id to each card using Math random method
-    const shuffleCards = () => {
-      const shuffledCards = [...images, ...images].sort(() => Math.random() - 0.5)
-      .map(() => ({ ...images, id: Math.random()}))
-      
+  const shuffleCards = () => {
+    const shuffledCards = [...images, ...images].sort(() => Math.random() - 0.5)
+      .map(() => ({ ...images, id: Math.random() }));
+
     setCards(shuffledCards);
     setTurns(0);
 
-    };
+  };
 
 
-      console.log(cards, turns);
+  console.log(cards, turns);
 
 
   return (
     <>
-    <h1>Memory Game</h1>
-    <button onClick={shuffleCards}>New Game</button>
+      <h1>Memory Game</h1>
+      <button onClick={shuffleCards}>New Game</button>
+
+      <div className="grid">
+        {images.map(images => (
+          <div key={images.id} className="card">
+            <img src={images.src} alt="cards" />
+            <img src=".../images/Cards/Cover.png" className="Cover" />
+          </div>
+        ))}
+      </div>
+      
+      <p>Turns: {turns}</p>
+      <button>Reset</button>
+
     </>
-  
+
   );
 
 }
