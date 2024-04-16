@@ -272,14 +272,14 @@ button:focus-visible {
 
 .MGgrid {
   display: grid;
-  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr, 1fr;
   grid-gap: 15px;
   margin-top:50px; 
 }
 
 .card {
   position: relative;
-  display: flex;
+  display: grid;
 
 }
 
@@ -294,22 +294,23 @@ button:focus-visible {
 .card .reveal {
   transform: rotateY(90deg);
   position: absolute;  
-  transition-delay: 0.5s;
+  transition-delay: 0.4s;
 }
 
 .flipped .reveal {
   transform: rotateY(0deg);
+  transition-delay: 0s;
 }
 
 .card .cover {
   transition: all ease-in-out 0.5s;
-  transition: transform 0.2s;
+
 
 }
 
 .flipped .cover{
   transform: rotate(90deg);
-  transition-delay: 0.5s;
+  transition-delay: 0s;
 }
 
 .MGbutton {

@@ -1,11 +1,10 @@
 import Cover from "../../images/Cover.png";
 
 
-const HiddenCards = ({ card, selectedChoice, flipped, disabled}) => {
+const HiddenCards = ({ card, selectedChoice, flipped}) => {
 
     
     const clickedCover = () => {
-        if (!disabled)
         selectedChoice(card);
     }
     

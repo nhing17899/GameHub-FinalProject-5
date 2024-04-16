@@ -10,8 +10,7 @@ import Ten from "../../images/Ten.png";
 
 
 
-//src\images\Jack.jpg
-
+// Array of images to be used in the game
 const images = [
   { "src": Ace, matched: false },
   { "src": Jack, matched: false  },
@@ -32,7 +31,7 @@ const Main = () => {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
-  //const [disabled, setDisabled] = useState(false);
+
 
 
 
@@ -54,11 +53,9 @@ const selectedChoice = (card) => {
     console.log(card);
     if (choiceOne === null) {
       setChoiceOne(card);
-      //console.log('choice One = ' + choiceOne);
     }
     else if (choiceTwo === null) {
       setChoiceTwo(card);
-      //console.log('choice One = ' + choiceOne, 'choice two = ' + choiceTwo);
       
     } 
     else {
@@ -70,7 +67,7 @@ const selectedChoice = (card) => {
 
 // Comparing the selected cards
 useEffect(() => {
-  //setDisabled(true);
+
   if (choiceOne && choiceTwo) {
     // setting matched to matched cards array and matched value 
     if (choiceOne.src === choiceTwo.src) {
@@ -105,7 +102,6 @@ const resetChoices = () => {
   setChoiceOne(null);
   setChoiceTwo(null);
   setTurns(prev => prev + 1);
-  //setDisabled(false);
 }
 
 
@@ -131,6 +127,6 @@ return (
   );
 
 }
- //disabled={disabled}
+
 
 export default Main;
