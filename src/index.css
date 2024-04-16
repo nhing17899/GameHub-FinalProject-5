@@ -200,6 +200,7 @@ button:focus-visible {
 }
 
 .game-history ul {
+
 }
 
 .score {
@@ -263,4 +264,22 @@ button:focus-visible {
 
 .toTheRight {
   margin-left: 20px;
+}
+
+.MGgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  margin-top: 40px;
+
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+
+  border-radius: 8px;
 }
