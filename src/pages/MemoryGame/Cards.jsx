@@ -1,8 +1,11 @@
+import Cover from "../../images/Cover.png";
 
-const HiddenCards = ({ card, selectedChoice, flipped}) => {
+
+const HiddenCards = ({ card, selectedChoice, flipped, disabled}) => {
 
     
     const clickedCover = () => {
+        if (!disabled)
         selectedChoice(card);
     }
     
@@ -10,8 +13,9 @@ const HiddenCards = ({ card, selectedChoice, flipped}) => {
     <>
         <div className={flipped ? "flipped" : ""}>
             <div>
-                <img src={card.src} alt="reveal" />
-                <img src=".src\images\Cover.png" alt="Cover" 
+            
+                <img className="reveal" src={card.src} alt="reveal" />
+                <img src= {Cover} alt="Cover" 
                 className="Cover" onClick={clickedCover}/>
             </div>
         </div>

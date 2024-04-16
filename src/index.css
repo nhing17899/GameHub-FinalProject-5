@@ -266,27 +266,52 @@ button:focus-visible {
   margin-left: 20px;
 }
 
+
+/* Memory Game  */
+
+
 .MGgrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
   grid-gap: 15px;
-  margin-top: 40px;
-
+  margin-top:50px; 
 }
 
 .card {
   position: relative;
+  display: flex;
+
 }
 
 .card img {
-  width: 100%;
-  border-radius: 8px;
+  width: 50px; 
+  max-height: fit-content;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding-top: 30px;
 }
 
-.card .front {
-  display: block;
+.card .reveal {
+  transform: rotateY(90deg);
+  position: absolute;  
+  transition-delay: 0.5s;
+}
+
+.flipped .reveal {
+  transform: rotateY(0deg);
 }
 
 .card .cover {
-  display: none;
+  transition: all ease-in-out 0.5s;
+  transition: transform 0.2s;
+
+}
+
+.flipped .cover{
+  transform: rotate(90deg);
+  transition-delay: 0.5s;
+}
+
+.MGbutton {
+  color:rgb(245, 245, 245)
 }

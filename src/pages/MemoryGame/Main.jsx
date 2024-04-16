@@ -1,16 +1,24 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import HiddenCards from "./Cards";
+import Ace from "../../images/Ace.png";
+import Jack from "../../images/Jack.png";
+import Joker from "../../images/Joker.png";
+import King from "../../images/King.png";
+import Queen from "../../images/Queen.png";
+import Ten from "../../images/Ten.png";
 
 
+
+//src\images\Jack.jpg
 
 const images = [
-  { "src": 'src\images/Ace.png', matched: false },
-  { "src": 'src\images/Jack.jpg', matched: false  },
-  { "src": 'src\images/Joker.jpg', matched: false },
-  { "src": 'src\images/King.jpg', matched: false  },
-  { "src": 'src\images/Queen.jpg', matched: false},
-  { "src": 'src\images/Ten.jpg', matched: false }
+  { "src": Ace, matched: false },
+  { "src": Jack, matched: false  },
+  { "src": Joker, matched: false },
+  { "src": King, matched: false  },
+  { "src": Queen, matched: false},
+  { "src": Ten, matched: false }
 ]
 
 
@@ -24,6 +32,7 @@ const Main = () => {
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+  //const [disabled, setDisabled] = useState(false);
 
 
 
@@ -61,7 +70,7 @@ const selectedChoice = (card) => {
 
 // Comparing the selected cards
 useEffect(() => {
-  
+  //setDisabled(true);
   if (choiceOne && choiceTwo) {
     // setting matched to matched cards array and matched value 
     if (choiceOne.src === choiceTwo.src) {
@@ -82,8 +91,7 @@ useEffect(() => {
         resetChoices();
       }
     else {
-      return;
-    }
+      setTimeout(() => resetChoices(), 2000);}
   }
 } , [choiceOne, choiceTwo]);
 
@@ -97,6 +105,7 @@ const resetChoices = () => {
   setChoiceOne(null);
   setChoiceTwo(null);
   setTurns(prev => prev + 1);
+  //setDisabled(false);
 }
 
 
@@ -104,9 +113,9 @@ const resetChoices = () => {
 
 return (
     <>
-      <h1>Memory Game</h1>
-      <button onClick={shuffleCards}>New Game</button>
-
+      <h1>Memory Game</h1> 
+      
+      <button className="MGbutton" onClick={shuffleCards}>Start New Game</button>
       <div className="card">
         {cards.map(card => 
         <HiddenCards 
@@ -115,15 +124,13 @@ return (
         card={card} 
         selectedChoice={selectedChoice}
         flipped={card === choiceOne || card === choiceTwo || card.matched}
-      />
-
-
+       />)}
       </div>
       <p>Attempts: {turns}</p>
     </>
   );
 
 }
-
+ //disabled={disabled}
 
 export default Main;
