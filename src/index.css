@@ -270,25 +270,25 @@ button:focus-visible {
 /* Memory Game  */
 
 
-.MGgrid {
-  display: grid;
-  grid-template-rows: 1fr, 1fr, 1fr;
+.MGgrid{
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
-  margin-top:50px; 
-}
-
-.card {
-  position: relative;
+  margin-top:30px;
   display: grid;
 
 }
 
 .card img {
-  width: 50px; 
+  width: 90px; 
   max-height: fit-content;
   border-radius: 4px;
   border: 1px solid transparent;
-  padding-top: 30px;
+  padding : 3px;
+}
+
+
+.card {
+  position: relative;
 }
 
 .card .reveal {
@@ -304,12 +304,13 @@ button:focus-visible {
 
 .card .cover {
   transition: all ease-in-out 0.5s;
-
+  transition-delay: 0s;
+  
 
 }
 
 .flipped .cover{
-  transform: rotate(90deg);
+  transform: rotateY(90deg);
   transition-delay: 0s;
 }
 

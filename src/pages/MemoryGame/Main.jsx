@@ -112,7 +112,8 @@ return (
       <h1>Memory Game</h1> 
       
       <button className="MGbutton" onClick={shuffleCards}>Start New Game</button>
-      <div className="card">
+      
+      <div className="MGgrid">
         {cards.map(card => 
         <HiddenCards 
         images={images} 
@@ -122,6 +123,7 @@ return (
         flipped={card === choiceOne || card === choiceTwo || card.matched}
        />)}
       </div>
+
       <p>Attempts: {turns}</p>
     </>
   );

@@ -10,12 +10,13 @@ const HiddenCards = ({ card, selectedChoice, flipped}) => {
     
     return (
     <>
-        <div className={flipped ? "flipped" : ""}>
-            <div>
-            
-                <img className="reveal" src={card.src} alt="reveal" />
-                <img src= {Cover} alt="Cover" 
-                className="Cover" onClick={clickedCover}/>
+        <div className="card">
+            <div className={flipped ? "flipped" : ""}>
+                <div>
+                    <img className="reveal" src={card.src} alt="reveal" />
+                    <img src= {Cover} alt="Cover" 
+                    className="Cover" onClick={clickedCover}/>
+                </div>
             </div>
         </div>
     </>
