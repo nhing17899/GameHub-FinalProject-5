@@ -199,13 +199,6 @@ button:focus-visible {
   padding: 0;
 }
 
-.game-history ul {
-}
-
-.score {
-
-}
-
 .custom-select {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -217,12 +210,7 @@ button:focus-visible {
   font-family: inherit;
 }
 
-
-.btn-group {
-}
-
 .wordle {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,14 +221,9 @@ button:focus-visible {
   background-color: grey;
 }
 
-
 .reset-game-button {
   margin: 5px;
   background-color: grey;
-}
-
-.letter.incorrect {
-  background-color: var(--incorrect);
 }
 
 .hangmanLetter {

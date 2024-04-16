@@ -130,12 +130,13 @@ const Hangman = () => {
 
           <div>
           <input
+              className="form-control name-input"
               type="text"
               maxLength="1"
               value={inputLetter}
               onChange={(e) => setInputLetter(e.target.value)}
             />
-            <button onClick={handleGuess}>Go!</button>
+            <button className="btn btn-primary start-game-button" onClick={handleGuess}>Go!</button>
           </div>
 
           <div>{renderGameStateMessage()}</div>
