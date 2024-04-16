@@ -9,6 +9,7 @@ import WordleGame from './pages/Wordle';
 import ErrorPage from './pages/ErrorPage';
 import Navigation from './components/Navigation';
 import HangmanGame from './pages/Hangman/Hangman';
+import MemoryGame from './pages/MemoryGame/Main'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/Hangman",
         element: <HangmanGame />
+      },
+      {
+        path: "/MemoryGame",
+        element: <MemoryGame />
       },
     ],
   },
