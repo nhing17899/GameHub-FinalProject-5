@@ -1,4 +1,4 @@
-IT3047C - Final Project - GameHub
+IT3049C - Final Project - GameHub
 ===================================
 
 Instructions to this assignment can be found [here](https://it3049c.github.io/assignments/gamehub/).
